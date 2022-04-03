@@ -1,0 +1,23 @@
+version: "3"
+services:
+  node-web-app:
+    build: .
+    restart: always
+    ports:
+      - "8084:8084"
+    depends_on:
+      - "voicevox-engine"
+    volumes:
+      - ./sounds:/usr/src/app/sounds
+#    depends_on:
+#      - redis
+
+#  redis:
+#    image: redis:3.0-alpine
+
+  voicevox-engine:
+    container_name: voicevox-engine
+    image: hiroshiba/voicevox_engine:cpu-ubuntu20.04-latest
+    restart: always
+    ports:
+      - "50021:50021"
