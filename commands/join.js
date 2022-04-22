@@ -9,22 +9,25 @@ module.exports = {
         const member = await guild.members.fetch(interaction.member.id);
         const memberVC = member.voice.channel;
         if (!memberVC) {
-            return interaction.reply({
-                content: "接続先のVCが見つかりません。",
-                ephemeral: true,
-            });
+            console.log("接続先のVCが見つかりません。")
+            // return interaction.reply({
+            //     content: "接続先のVCが見つかりません。",
+            //     ephemeral: true,
+            // });
         }
         if (!memberVC.joinable) {
-            return interaction.reply({
-                content: "VCに接続できません。",
-                ephemeral: true,
-            });
+            console.log("VCに接続できません。")
+            // return interaction.reply({
+            //     content: "VCに接続できません。",
+            //     ephemeral: true,
+            // });
         }
         if (!memberVC.speakable) {
-            return interaction.reply({
-                content: "VCで音声を再生する権限がありません。",
-                ephemeral: true,
-            });
+            console.log("VCで音声を再生する権限がありません。")
+            // return interaction.reply({
+            //     content: "VCで音声を再生する権限がありません。",
+            //     ephemeral: true,
+            // });
         }
         const connection = joinVoiceChannel({
             guildId: guild.id,

@@ -110,24 +110,24 @@ async function getConnection(interaction) {
   const memberVC = member.voice.channel;
   if (!memberVC) {
     console.log("接続先のVCが見つかりません")
-    return interaction.reply({
-      content: "接続先のVCが見つかりません。",
-      ephemeral: true,
-    });
+    // return interaction.reply({
+    //   content: "接続先のVCが見つかりません。",
+    //   ephemeral: true,
+    // });
   }
   if (!memberVC.joinable) {
     console.log("VCに接続できません。")
-    return interaction.reply({
-      content: "VCに接続できません。",
-      ephemeral: true,
-    });
+    // return interaction.reply({
+    //   content: "VCに接続できません。",
+    //   ephemeral: true,
+    // });
   }
   if (!memberVC.speakable) {
     console.log("VCで音声を再生する権限がありません。")
-    return interaction.reply({
-      content: "VCで音声を再生する権限がありません。",
-      ephemeral: true,
-    });
+    // return interaction.reply({
+    //   content: "VCで音声を再生する権限がありません。",
+    //   ephemeral: true,
+    // });
   }
   return getVoiceConnection(memberVC.guild.id);
 }
