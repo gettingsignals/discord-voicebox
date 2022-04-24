@@ -17,7 +17,7 @@ services:
 
   voicevox-engine:
     container_name: voicevox-engine
-    image: hiroshiba/voicevox_engine:cpu-ubuntu20.04-latest
+    image: voicevox/voicevox_engine:cpu-ubuntu20.04-latest
     restart: always
     ports:
       - "50021:50021"
